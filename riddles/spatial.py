@@ -3,10 +3,10 @@ from collections import deque
 from core import BaseRiddle, riddle
 
 _NODE_POOL = [
-    'VX-7',   'OBELISK', 'CAISSON',  'LUMEN',   'BRACKET',
-    'SILT',   'FERRITE', 'NODULE',   'CIPHER',  'WELD',
-    'BASALT', 'TROUGH',  'SPINDLE',  'FLANGE',  'CULVERT',
-    'DATUM',  'MANTLE',  'HINGE',    'PELLET',  'SCORIA'
+    'VX-7', 'OBELISK', 'CAISSON', 'LUMEN', 'BRACKET',
+    'SILT', 'FERRITE', 'NODULE', 'CIPHER', 'WELD',
+    'BASALT', 'TROUGH', 'SPINDLE', 'FLANGE', 'CULVERT',
+    'DATUM', 'MANTLE', 'HINGE', 'PELLET', 'SCORIA'
 ]
 
 _RUMOURS = [

@@ -90,8 +90,8 @@ def _make_modular_trap(rng):
 
 def _make_index_trap(rng):
     filler = ['alpha', 'beta', 'gamma', 'delta', 'epsilon',
-              'zeta',  'eta',  'theta', 'iota',  'kappa',
-              'mu',    'nu',   'xi',    'rho',   'sigma']
+              'zeta', 'eta', 'theta', 'iota', 'kappa',
+              'mu', 'nu', 'xi', 'rho', 'sigma']
     k = rng.randint(3, 6)
     chosen = rng.sample(filler, k)
     base = ' '.join(chosen)

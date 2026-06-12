@@ -80,28 +80,28 @@ class PhysicalRiddle(BaseRiddle):
             '│  This riddle is anchored to YOUR physical environment right now.   │',
             '│  No AI, search engine, or database can answer for you.             │',
             '│                                                                     │',
-            '│  Before the puzzle is revealed, provide three data points:         │',
+            '│  Before the puzzle is revealed, provide three data points:        │',
             '│                                                                     │',
             f'│  A) Your current local time in HH:MM format (24-hour clock).      │',
             f'│  B) The temperature outside your window right now, in {self._unit:3s}.      │',
             f'│  C) Roll a standard 6-sided die {self._n_rolls} times.                       │',
             f'│     Enter the results as a sequence, e.g.: 3 1 4 1 5             │',
             '│                                                                     │',
-            '│  Format your answer EXACTLY as:                                    │',
+            '│  Format your answer EXACTLY as:                                   │',
             '│    TIME=HH:MM TEMP=N ROLLS=d1 d2 d3 ...                           │',
-            '│  Example:  TIME=14:37 TEMP=22 ROLLS=3 1 4                         │',
+            '│  Example: TIME=14:37 TEMP=22 ROLLS=3 1 4                         │',
             '│                                                                     │',
             f'│  ⏱  {self._deadline}s total for both phases.                              │',
             '└─────────────────────────────────────────────────────────────────────┘'
         ])
 
         return {
-            'text':  text,
-            'type':  'physical',
+            'text': text,
+            'type': 'physical',
             'phase': 1,
             'metadata': {
                 'n_rolls': self._n_rolls,
-                'unit':    self._unit
+                'unit':   self._unit
             }
         }
 
@@ -172,16 +172,16 @@ class PhysicalRiddle(BaseRiddle):
                 '┌─ PHYSICAL CONTEXT ENGINE — PHASE 2 ───────────────────────────────┐',
                 '│  Local data received.  Computing your personal target T...         │',
                 '│                                                                     │',
-                f'│  Your inputs:  time={hour:02d}:{minute:02d}  temp={temp}{unit}  '
+                f'│  Your inputs: time={hour:02d}:{minute:02d}  temp={temp}{unit}  '
                 f'rolls={" ".join(str(r) for r in rolls)}',
                 '│                                                                     │',
-                f'│  Derivation of T (session-specific formula):                      │',
+                f'│  Derivation of T (session-specific formula):                     │',
                 f'│    base = hour × minute =  {hour} × {minute} =  {base}      │',
                 f'│    v1 = base  {op1}  temp =  {base} {op1} {temp}           │',
                 f'│    roll_sum = {roll_sum}  (sum of your die rolls)                  │',
                 f'│    T = v1  {op2}  roll_sum                                  │',
                 '│                                                                     │',
-                '│  Now solve this procedure using YOUR value of T:                   │',
+                '│  Now solve this procedure using YOUR value of T:                  │',
                 '│                                                                     │',
                 *[f'│  {l}' for l in steps.split('\n')],
                 '│                                                                     │',
